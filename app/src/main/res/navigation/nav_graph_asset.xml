@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/assetInfoFragment">
+
+    <fragment
+        android:id="@+id/assetInfoFragment"
+        android:name="network.etna.etnawallet.ui.asset.assetinfo.AssetInfoFragment">
+
+        <action
+            android:id="@+id/toWalletPlatformSettingsFragment"
+            app:destination="@id/walletPlatformSettingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toSendActivity"
+            app:destination="@id/sendActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action android:id="@+id/toReceiveDialogFragment"
+            app:destination="@+id/receiveDialogFragment">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/walletPlatformSettingsFragment"
+        android:name="network.etna.etnawallet.ui.walletplatform.settings.WalletPlatformSettingsFragment">
+
+        <action
+            android:id="@+id/toWalletPlatformTokenListFragment"
+            app:destination="@id/walletPlatformTokenListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toWalletPlatformAddTokenFragment"
+            app:destination="@id/walletPlatformAddTokenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toWalletPlatformAddNFTTokenFragment"
+            app:destination="@id/walletPlatformAddNFTTokenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/walletPlatformTokenListFragment"
+        android:name="network.etna.etnawallet.ui.walletplatform.tokenlist.WalletPlatformTokenListFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/walletPlatformAddTokenFragment"
+        android:name="network.etna.etnawallet.ui.walletplatform.addtoken.WalletPlatformAddTokenFragment">
+
+        <action android:id="@+id/toWalletPlatformSearchTokenFragment"
+            app:destination="@+id/walletPlatformSearchTokenFragment">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/walletPlatformAddNFTTokenFragment"
+        android:name="network.etna.etnawallet.ui.walletplatform.addnfttoken.WalletPlatformAddNFTTokenFragment">
+
+        <action android:id="@+id/toWalletPlatformSearchTokenFragment"
+            app:destination="@+id/walletPlatformSearchTokenFragment">
+        </action>
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/walletPlatformSearchTokenFragment"
+        android:name="network.etna.etnawallet.ui.walletplatform.searchtoken.WalletPlatformSearchTokenFragment">
+
+        <argument
+            android:name="input"
+            app:argType="string" />
+
+    </dialog>
+
+    <dialog
+        android:id="@+id/receiveDialogFragment"
+        android:name="network.etna.etnawallet.ui.asset.receive.ReceiveDialogFragment">
+    </dialog>
+
+    <activity
+        android:id="@+id/sendActivity"
+        android:name="network.etna.etnawallet.ui.asset.send.SendActivity">
+
+        <argument
+            android:name="assetIdHolder"
+            app:argType="string" />
+
+    </activity>
+
+</navigation>

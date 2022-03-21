@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/platformImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/margin_from_topbar"
+        android:layout_marginStart="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/includeToolbar"/>
+
+    <TextView
+        android:id="@+id/platformName"
+        style="@style/TextAppearance.Etna.HeadlineSmallBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/c_primaryColor100"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toEndOf="@+id/platformImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/platformImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/platformImageView" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/c_primaryColor700"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        app:layout_constraintTop_toBottomOf="@id/platformImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tokensListTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/wallet_platform_tokens_list"
+        android:textColor="@color/c_primaryColor100"
+        app:drawableStartCompat="@drawable/profile_eye"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator" />
+
+    <TextView
+        android:id="@+id/addTokenTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/wallet_platform_add_token"
+        android:textColor="@color/c_primaryColor100"
+        app:drawableStartCompat="@drawable/profile_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tokensListTextView" />
+
+    <TextView
+        android:id="@+id/addNftTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/wallet_platform_add_nft"
+        android:textColor="@color/c_primaryColor100"
+        app:drawableStartCompat="@drawable/profile_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addTokenTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_import_single_wallet"
+    app:startDestination="@id/ImportSingleWalletSeedFragment">
+
+    <fragment
+        android:id="@+id/ImportSingleWalletSeedFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importsinglewallet.variants.seed.ImportSingleWalletSeedFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ImportSingleWalletPrivateKeyFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importsinglewallet.variants.privatekey.ImportSingleWalletPrivateKeyFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ImportSingleWalletAddressFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importsinglewallet.variants.address.ImportSingleWalletAddressFragment">
+    </fragment>
+
+</navigation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque"> <!-- android:opacity="opaque" should be here -->
+    <item>
+        <color android:color="@color/c_backgroundColor"/>
+    </item>
+
+    <item
+        android:drawable="@drawable/logo_etnawallet_new"
+        android:width="217dp"
+        android:height="30dp"
+        android:gravity="center">
+    </item>
+</layer-list>

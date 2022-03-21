@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar"
+    app:startDestination="@id/generalFragment">
+
+    <fragment
+        android:id="@+id/generalFragment"
+        android:name="network.etna.etnawallet.ui.general.GeneralFragment"
+        android:label="fragment_general">
+
+        <action
+            android:id="@+id/generalFragment_to_selectWalletFragment"
+            app:destination="@id/selectWalletFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toNftCollectionsFragment"
+            app:destination="@id/nftCollectionsFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toAssetActivity"
+            app:destination="@id/assetActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <activity android:id="@+id/assetActivity"
+        android:name="network.etna.etnawallet.ui.asset.AssetActivity">
+        <argument
+            android:name="isCurrency"
+            app:argType="boolean" />
+        <argument
+            android:name="platform"
+            app:argType="string" />
+        <argument
+            android:name="assetId"
+            app:argType="string" />
+        <argument
+            android:name="referenceAssetId"
+            app:argType="string" />
+        <argument
+            android:name="address"
+            app:argType="string" />
+    </activity>
+
+    <fragment
+        android:id="@+id/selectWalletFragment"
+        android:name="network.etna.etnawallet.ui.general.selectwallet.SelectWalletFragment"/>
+
+    <fragment
+        android:id="@+id/nftCollectionsFragment"
+        android:name="network.etna.etnawallet.ui.general.nftcollections.NftCollectionsFragment"/>
+
+    <fragment
+        android:id="@+id/swapFragment"
+        android:name="network.etna.etnawallet.SwapFragment" />
+
+    <fragment
+        android:id="@+id/exchangeFragment"
+        android:name="network.etna.etnawallet.ui.exchange.ExchangeFragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="network.etna.etnawallet.NotificationFragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="network.etna.etnawallet.ui.profile.ProfileFragment">
+
+        <action
+            android:id="@+id/profileFragment_to_profileWalletsListFragment"
+            app:destination="@id/profileWalletsListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/profileFragment_to_profileSettingsFragment"
+            app:destination="@id/profileSettingsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileWalletsListFragment"
+        android:name="network.etna.etnawallet.ui.profile.walletslist.ProfileWalletsListFragment">
+
+        <action android:id="@+id/profileWalletsListFragment_to_profileWalletInfoFragment"
+            app:destination="@+id/profileWalletInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+            <argument
+                android:name="wallet_id"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileSettingsFragment"
+        android:name="network.etna.etnawallet.ui.profile.settings.ProfileSettingsFragment">
+
+        <action android:id="@+id/profileSettingsFragment_to_profileSettingsCurrencyFragment"
+            app:destination="@+id/profileSettingsCurrencyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+        <action android:id="@+id/profileSettingsFragment_to_profileSettingsActiveNetworkFragment"
+            app:destination="@+id/profileSettingsActiveNetworkFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileSettingsActiveNetworkFragment"
+        android:name="network.etna.etnawallet.ui.profile.settings.activenetwork.ProfileSettingsActiveNetworkFragment">
+
+        <action android:id="@+id/toTestnetWarningDialogFragment"
+            app:destination="@+id/testnetWarningDialogFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/testnetWarningDialogFragment"
+        android:name="network.etna.etnawallet.ui.profile.settings.activenetwork.testnetwarning.TestnetWarningDialogFragment"/>
+
+    <fragment
+        android:id="@+id/profileSettingsCurrencyFragment"
+        android:name="network.etna.etnawallet.ui.profile.settings.currency.ProfileSettingsCurrencyFragment"/>
+
+    <fragment
+        android:id="@+id/profileWalletInfoFragment"
+        android:name="network.etna.etnawallet.ui.profile.wallets.walletinfo.ProfileWalletInfoFragment">
+
+        <argument
+            android:name="wallet_id"
+            app:argType="string" />
+
+        <action android:id="@+id/toChangeWalletNameFragment"
+            app:destination="@+id/changeWalletNameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+        <action android:id="@+id/toDeleteWalletActivity"
+            app:destination="@+id/deleteWalletActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+        <action
+            android:id="@+id/toRecoveryPhraseActivity"
+            app:destination="@id/recoveryPhraseActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/changeWalletNameFragment"
+        android:name="network.etna.etnawallet.ui.profile.wallets.changewalletname.ChangeWalletNameFragment">
+
+        <argument
+            android:name="wallet_id"
+            app:argType="string" />
+
+    </fragment>
+
+    <activity android:id="@+id/recoveryPhraseActivity"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.RecoveryPhraseActivity">
+        <argument
+            android:name="walletId"
+            app:argType="string" />
+        <argument
+            android:name="checkOTP"
+            app:argType="boolean" />
+    </activity>
+
+    <activity android:id="@+id/deleteWalletActivity"
+        android:name="network.etna.etnawallet.ui.profile.wallets.delete.DeleteWalletActivity">
+        <argument
+            android:name="walletId"
+            app:argType="string" />
+    </activity>
+
+</navigation>

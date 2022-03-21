@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/walletNameDesc"
+        style="@style/TextAppearance.Etna.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/small_margin_from_topbar"
+        android:text="@string/wallet_name"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/includeToolbar" />
+
+    <EditText
+        android:id="@+id/walletNameTextField"
+        style="@style/TextAppearance.Etna.HeadlineSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/enter_name"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/c_textColor_white"
+        android:textColorHint="@color/c_primaryColor600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletNameDesc" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/addWalletButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/bottom_space"
+        android:text="@string/create_wallet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

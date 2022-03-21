@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/changeNameTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/change_name"
+        android:textColor="@color/c_primaryColor100"
+        app:drawableStartCompat="@drawable/profile_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbar" />
+
+    <TextView
+        android:id="@+id/getRecoveryPhraseTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/get_recovery_phrase"
+        android:textColor="@color/c_primaryColor100"
+        app:drawableStartCompat="@drawable/profile_rotate_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeNameTextView" />
+
+    <TextView
+        android:id="@+id/setAsActiveWalletTextView"
+        style="@style/TextAppearance.Etna.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_bar_space"
+        android:drawablePadding="10dp"
+        android:text="@string/wallet_info_set_as_active_wallet"
+        android:textColor="@color/c_primaryColor100"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_checkmark_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/activeWalletTextView"
+        style="@style/TextAppearance.Etna.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_bar_space"
+        android:drawablePadding="10dp"
+        android:text="@string/wallet_info_active_wallet"
+        android:textColor="@color/c_secondaryColorGreen"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_checkmark_circle"
+        app:drawableTint="@color/c_secondaryColorGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

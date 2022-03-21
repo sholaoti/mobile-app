@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/layout_pin_code_dot_scene"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_backgroundColor"
+    android:id="@+id/motionLayout">
+
+    <ImageView
+        android:id="@+id/normalImage"
+        android:src="@drawable/ic_pin_code_dot_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/pressedImage"
+        android:src="@drawable/ic_pin_code_dot_pressed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/successImage"
+        android:src="@drawable/ic_pin_code_dot_pressed"
+        app:tint="@color/c_secondaryColorGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

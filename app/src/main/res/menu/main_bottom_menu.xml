@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/generalFragment"
+        android:icon="@drawable/ic_nav_general"
+        android:title="@string/tabbar_general" />
+
+    <item
+        android:id="@+id/swapFragment"
+        android:icon="@drawable/ic_nav_swap"
+        android:title="@string/tabbar_swap" />
+
+    <item
+        android:id="@+id/exchangeFragment" />
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_nav_notification"
+        android:title="@string/tabbar_notification" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="@string/tabbar_profile" />
+</menu>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_backgroundColor"
+    tools:context=".ui.profile.ProfileFragment"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/myWalletsButton"
+        android:text="@string/profile_my_wallets"
+        android:textColor="@color/c_primaryColor100"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:gravity="start|center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/profile_wallets" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/c_primaryColor700"
+        app:layout_constraintTop_toBottomOf="@id/myWalletsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/settingsTextView"
+        android:text="@string/settings"
+        android:textColor="@color/c_primaryColor100"
+        android:background="@drawable/viewholder_basic_profile_background"
+        android:gravity="start|center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/separator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"
+        android:drawablePadding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/profile_settings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

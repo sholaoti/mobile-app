@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp">
+
+        <include
+            android:id="@+id/includeToolbar"
+            layout="@layout/layout_basic_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin"
+            android:layout_marginEnd="@dimen/base_margin"
+            android:paddingBottom="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/includeToolbar">
+
+            <ImageView
+                android:id="@+id/assetImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/assetTitleTextView"
+                style="@style/TextAppearance.Etna.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_margin"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:text="@string/market_overview"
+                android:textAlignment="center"
+                android:textColor="@color/c_primaryColor100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assetImageView" />
+
+            <TextView
+                android:id="@+id/assetSubtitleTextView"
+                style="@style/TextAppearance.Etna.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_margin"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="@dimen/base_margin"
+                android:text="@string/market_overview"
+                android:textAlignment="center"
+                android:textColor="@color/c_primaryColor400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assetTitleTextView" />
+
+            <TextView
+                android:id="@+id/currencyBalanceTextView"
+                style="@style/TextAppearance.Etna.HeadlineLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/c_primaryColor100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assetSubtitleTextView" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currencyBalanceTextView">
+
+                <TextView
+                    android:id="@+id/balanceTextView"
+                    style="@style/TextAppearance.Etna.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/c_primaryColor300"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/balanceArrowUp"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/balanceTextView"
+                    app:layout_constraintStart_toEndOf="@id/balanceTextView"
+                    app:layout_constraintTop_toTopOf="@id/balanceTextView"
+                    app:tint="@color/c_secondaryColorGreen" />
+
+                <ImageView
+                    android:id="@+id/balanceArrowDown"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_arrow_down"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="@id/balanceTextView"
+                    app:layout_constraintStart_toEndOf="@id/balanceTextView"
+                    app:layout_constraintTop_toTopOf="@id/balanceTextView"
+                    app:tint="@color/c_secondaryColorRed" />
+
+                <TextView
+                    android:id="@+id/change24TextView"
+                    style="@style/TextAppearance.Etna.Body"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:textColor="@color/diff_textview_color_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/balanceTextView"
+                    app:layout_constraintStart_toEndOf="@id/balanceArrowDown"
+                    app:layout_constraintTop_toTopOf="@id/balanceTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/infoContainer">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineButtonsStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.189" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineButtonsEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.811" />
+
+            <ImageButton
+                android:id="@+id/buttonReceive"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/basic_circle_button_background"
+                android:gravity="center"
+                android:src="@drawable/ic_receive"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/buttonSend"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/basic_circle_button_background"
+                android:gravity="center"
+                android:src="@drawable/ic_send"
+                app:layout_constraintEnd_toEndOf="@id/guidelineButtonsStart"
+                app:layout_constraintStart_toStartOf="@id/guidelineButtonsStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/buttonSwap"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/basic_circle_button_background"
+                android:gravity="center"
+                android:src="@drawable/ic_swap"
+                app:layout_constraintEnd_toEndOf="@id/guidelineButtonsEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineButtonsEnd"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/TextAppearance.Etna.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/asset_action_send"
+                android:textColor="@color/c_primaryColor100"
+                app:layout_constraintEnd_toEndOf="@id/guidelineButtonsStart"
+                app:layout_constraintStart_toStartOf="@id/guidelineButtonsStart"
+                app:layout_constraintTop_toBottomOf="@id/buttonSend" />
+
+            <TextView
+                style="@style/TextAppearance.Etna.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/asset_action_receive"
+                android:textColor="@color/c_primaryColor100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonReceive" />
+
+            <TextView
+                style="@style/TextAppearance.Etna.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/asset_action_swap"
+                android:textColor="@color/c_primaryColor100"
+                app:layout_constraintEnd_toEndOf="@id/guidelineButtonsEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineButtonsEnd"
+                app:layout_constraintTop_toBottomOf="@id/buttonSwap" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineTopViewBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <View
+            android:id="@+id/grayView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0"
+            android:background="@color/c_backgroundColorTab"
+            app:layout_constraintBottom_toBottomOf="@id/guideLineTopViewBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <network.etna.etnawallet.ui.asset.assetinfo.SegmentedNestedScrollView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/asset_info_bottomsheet_background"
+        android:fillViewport="true"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dataViewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/marketDataContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/segmentedSelectorView">
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    style="@style/TextAppearance.Etna.HeadlineMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/c_primaryColor100"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/percentTextView"
+                    style="@style/TextAppearance.Etna.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/diff_textview_color_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/priceTextView"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/priceTextView" />
+
+                <TableLayout
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    android:layout_marginTop="-10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:clipChildren="false"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart">
+
+                    <TableRow
+                        android:id="@+id/tableRow"
+                        android:clipChildren="false"/>
+
+                </TableLayout>
+
+                <network.etna.etnawallet.ui.base.segmentedControl.SegmentedControlView
+                    android:id="@+id/segmentedControlPeriod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineChart" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/segmentedControlPeriod" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transactionsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/segmentedSelectorView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/transactionsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/segmentedSelectorView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/asset_info_bottomsheet_background"
+                android:paddingBottom="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <network.etna.etnawallet.ui.base.segmentedControl.SegmentedControlView
+                    android:id="@+id/segmentedControl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/marketOverviewTitle"
+                    style="@style/TextAppearance.Etna.HeadlineSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    android:text="@string/market_overview"
+                    android:textAlignment="center"
+                    android:textColor="@color/c_primaryColor100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/segmentedControl" />
+
+                <TextView
+                    android:id="@+id/transactionHistoryTitle"
+                    style="@style/TextAppearance.Etna.HeadlineSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="@dimen/base_margin"
+                    android:visibility="gone"
+                    android:text="@string/transaction_history"
+                    android:textAlignment="center"
+                    android:textColor="@color/c_primaryColor100"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/segmentedControl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </network.etna.etnawallet.ui.asset.assetinfo.SegmentedNestedScrollView>
+
+    <include
+        android:id="@+id/includeLoadingView"
+        layout="@layout/layout_loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

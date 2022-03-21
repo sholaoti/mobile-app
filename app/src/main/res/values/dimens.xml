@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">12dp</dimen>
+    <dimen name="base_margin">16dp</dimen>
+    <dimen name="pin_code_button_space">44dp</dimen>
+    <dimen name="pin_code_vertical_button_space">24dp</dimen>
+    <dimen name="profile_button_height">56dp</dimen>
+    <dimen name="profile_button_padding">8dp</dimen>
+    <dimen name="bottom_bar_space">100dp</dimen>
+    <dimen name="bottom_space">30dp</dimen>
+    <dimen name="margin_from_topbar">30dp</dimen>
+    <dimen name="small_margin_from_topbar">10dp</dimen>
+    <dimen name="token_view_height">72dp</dimen>
+    <dimen name="general_fragment_bottom_sheet_expanded_top_margin">100dp</dimen>
+</resources>

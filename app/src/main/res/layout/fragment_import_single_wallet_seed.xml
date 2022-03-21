@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_backgroundColor">
+
+    <TextView
+        android:id="@+id/walletNameDesc"
+        style="@style/TextAppearance.Etna.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="20dp"
+        android:text="@string/wallet_name"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/walletNameTextField"
+        style="@style/TextAppearance.Etna.HeadlineSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/enter_name"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/c_primaryColor100"
+        android:textColorHint="@color/c_primaryColor600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletNameDesc" />
+
+    <TextView
+        android:id="@+id/recoveryPhraseDesc"
+        style="@style/TextAppearance.Etna.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/recovery_phrase"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walletNameTextField" />
+
+    <EditText
+        android:id="@+id/recoveryPhraseTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/type_here"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:singleLine="true"
+        style="@style/TextAppearance.Etna.HeadlineSmall"
+        android:textColor="@color/c_primaryColor100"
+        android:textColorHint="@color/c_primaryColor600"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recoveryPhraseDesc" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recoveryPhraseTextField"
+        tools:listitem="@layout/recycler_word_item_deletable" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView1"
+        tools:listitem="@layout/recycler_word_item_deletable" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="450dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView2"
+        tools:listitem="@layout/recycler_word_item_deletable" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/importButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/bottom_space"
+        android:text="@string/str_import"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

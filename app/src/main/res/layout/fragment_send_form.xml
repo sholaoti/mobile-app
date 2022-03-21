@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recipientDesc"
+        style="@style/TextAppearance.Etna.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/recipient_address"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/includeToolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recipientContainer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/edittext_background_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipientDesc">
+
+        <ImageView
+            android:id="@+id/qrCodeButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_qrcode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/qrSeparator"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c_primaryColor600"
+            app:layout_constraintEnd_toStartOf="@id/qrCodeButton"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/pasteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/paste"
+            android:layout_marginEnd="12dp"
+            style="@style/TextAppearance.Etna.HeadlineSmallBold"
+            android:textColor="@color/c_primaryColor100"
+            app:layout_constraintEnd_toStartOf="@id/qrSeparator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <EditText
+            android:id="@+id/recipientTextField"
+            style="@style/TextAppearance.Etna.Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/base_margin"
+            android:background="@null"
+            android:hint="@string/add_here"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/c_primaryColor100"
+            android:textColorHint="@color/c_primaryColor600"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pasteTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/amountDesc"
+        style="@style/TextAppearance.Etna.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="24dp"
+        android:text="@string/amount"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipientContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/amountContainer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:background="@drawable/edittext_background_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountDesc">
+
+        <TextView
+            android:id="@+id/tokenNameTextView"
+            style="@style/TextAppearance.Etna.HeadlineSmallBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_secondaryColorBlue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/tokenSeparator"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c_primaryColor600"
+            app:layout_constraintEnd_toStartOf="@id/tokenNameTextView"
+            android:layout_marginTop="@dimen/base_margin"
+            android:layout_marginBottom="@dimen/base_margin"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/maxTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/max"
+            android:layout_marginEnd="12dp"
+            style="@style/TextAppearance.Etna.HeadlineSmallBold"
+            android:textColor="@color/c_primaryColor100"
+            app:layout_constraintEnd_toStartOf="@id/tokenSeparator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <EditText
+            android:id="@+id/amountTextField"
+            style="@style/TextAppearance.Etna.Body"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:background="@null"
+            android:hint="@string/amount"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/c_primaryColor100"
+            android:textColorHint="@color/c_primaryColor600"
+            app:layout_constraintEnd_toStartOf="@id/maxTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/availableTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amountContainer" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/sendButton"
+        app:buttonColor="green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/bottom_space"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

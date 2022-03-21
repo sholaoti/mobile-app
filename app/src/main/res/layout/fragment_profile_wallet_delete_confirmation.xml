@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1594" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineTitle"
+        android:textAlignment="center"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.HeadlineSmallBold"
+        android:text="@string/delete_wallet_confirmation_title" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2125" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineSubtitle"
+        android:textAlignment="center"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Body"
+        android:text="@string/delete_wallet_confirmation_subtitle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3406" />
+
+    <TextView
+        android:id="@+id/confirmTextFieldTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineEditText"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/delete_wallet_confirmation_edittext_title" />
+
+
+    <EditText
+        android:id="@+id/confirmTextField"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/type_here"
+        android:singleLine="true"
+        android:textColorHint="@color/c_primaryColor600"
+        android:textColor="@color/c_primaryColor100"
+        android:lines="1"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmTextFieldTitle" />
+
+    <TextView
+        android:id="@+id/deleteWalletDescTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginBottom="@dimen/base_margin"
+        android:drawablePadding="12dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/delete_wallet_confirmation_confirm_text"
+        android:textColor="@color/c_primaryColor300"
+        app:drawableStartCompat="@drawable/square_checkbox"
+        app:drawableTint="@color/c_primaryColor300"
+        app:layout_constraintBottom_toTopOf="@+id/deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/deleteButton"
+        android:text="@string/delete_wallet"
+        app:buttonColor="green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/bottom_space"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <network.etna.etnawallet.ui.walletplatform.searchtoken.SearchTokenView
+        android:id="@+id/searchTokenView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:clipChildren="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtitlePlaceholder"
+        style="@style/TextAppearance.Etna.HeadlineSmallBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/fragment_search_token_subtitle"
+        android:textColor="@color/c_primaryColor100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTokenView" />
+
+    <TextView
+        android:id="@+id/searchingSubtitleTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/fragment_search_token_subtitle"
+        android:textColor="@color/c_primaryColor900"
+        app:layout_constraintStart_toStartOf="@id/subtitlePlaceholder"
+        app:layout_constraintTop_toBottomOf="@id/searchTokenView" />
+
+    <TextView
+        android:id="@+id/failedSubtitleTextView"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/fragment_search_token_subtitle_failed"
+        android:textAlignment="center"
+        android:textColor="@color/c_primaryColor900"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTokenView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tokenInfoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/confirmButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTokenView">
+
+        <TextView
+            android:id="@+id/tokenTitleTextView"
+            style="@style/TextAppearance.Etna.HeadlineMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_primaryColor900"
+            android:visibility="invisible"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tokenSubtitleTextView"
+            style="@style/TextAppearance.Etna.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/c_primaryColor900"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tokenTitleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/confirmButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginTop="70dp"
+        android:text="@string/confirm_button"
+        app:buttonColor="green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/failedSubtitleTextView" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/tryAgainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginTop="70dp"
+        android:text="@string/try_again"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/failedSubtitleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_recovery_phrase"
+    app:startDestination="@id/recoveryPhraseInitialFragment">
+
+    <fragment
+        android:id="@+id/recoveryPhraseInitialFragment"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.initial.RecoveryPhraseInitialFragment">
+
+        <action
+            android:id="@+id/toRecoveryPhraseShowFragment"
+            app:destination="@id/recoveryPhraseShowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toOtpFragment"
+            app:destination="@id/otpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toRecoveryPhraseInfoFragment"
+            app:destination="@id/recoveryPhraseInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="network.etna.etnawallet.ui.login.pincode.otp.OTPFragment">
+
+        <action
+            android:id="@+id/toRecoveryPhraseShowFragment"
+            app:destination="@id/recoveryPhraseShowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/recoveryPhraseInitialFragment"
+            app:popUpToInclusive="false"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoveryPhraseShowFragment"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.show.RecoveryPhraseShowFragment">
+
+        <action
+            android:id="@+id/toRecoveryPhraseVerifyFragment"
+            app:destination="@id/recoveryPhraseVerifyFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toRecoveryPhraseInfoFragment"
+            app:destination="@id/recoveryPhraseInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoveryPhraseVerifyFragment"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.verify.RecoveryPhraseVerifyFragment">
+
+        <action
+            android:id="@+id/toRecoveryPhraseSuccessFragment"
+            app:destination="@id/recoveryPhraseSuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/nav_graph_recovery_phrase"
+            app:popUpToInclusive="true"
+            />
+
+        <action
+            android:id="@+id/toRecoveryPhraseInfoFragment"
+            app:destination="@id/recoveryPhraseInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoveryPhraseSuccessFragment"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.success.RecoveryPhraseSuccessFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/recoveryPhraseInfoFragment"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.info.RecoveryPhraseInfoFragment"/>
+
+</navigation>

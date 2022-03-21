@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <solid android:color="@color/c_primaryColor700"/>
+            <corners
+                android:radius="20dp" />
+
+            <size android:width="40dp" android:height="40dp"/>
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/ic_rotate_left"
+        android:gravity="center"
+        />
+</layer-list>

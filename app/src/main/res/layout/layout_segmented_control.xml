@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/segmented_control_background"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/selectedView"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/segmented_control_selected_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/segmentedControlRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

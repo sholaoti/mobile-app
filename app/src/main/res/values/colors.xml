@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="c_orange">#FFF7931A</color>
+    <color name="c_backgroundColor">@color/c_primaryColor900</color>
+    <color name="c_textColor_white">#FFFFFF</color>
+
+    <color name="c_primaryColor900">#10101A</color>
+    <color name="c_primaryColor800">#171720</color>
+    <color name="c_primaryColor700">#252930</color>
+    <color name="c_primaryColor600">#313340</color>
+    <color name="c_primaryColor500">#5B5E66</color>
+    <color name="c_primaryColor400">#7D8590</color>
+    <color name="c_primaryColor300">#B8B9BB</color>
+    <color name="c_primaryColor200">#F2F2F2</color>
+    <color name="c_primaryColor100">#FFFFFF</color>
+
+    <color name="c_primaryColor100_50">#80FFFFFF</color>
+
+    <color name="c_secondaryColorRed">#FFFB4848</color>
+    <color name="c_secondaryColorOrange">#FE5430</color>
+    <color name="c_secondaryColorYellow">#F7931A</color>
+    <color name="c_secondaryColorGreen">#01CC88</color>
+    <color name="c_secondaryColorPurple">#EB9FB9</color>
+    <color name="c_secondaryColorBlue">#7791C7</color>
+    <color name="c_secondaryColorLightBlue">#95BAD4</color>
+
+    <color name="c_backgroundColorTab">#800C0C13</color>
+    <color name="c_backgroundColorRed">#26FE5430</color>
+    <color name="c_backgroundColorYellow">#26F7931A</color>
+    <color name="c_backgroundColorGreen">#2601CC88</color>
+
+    <color name="c_chartGradientStartColorGreen">#4001CC88</color>
+    <color name="c_chartGradientEndColorGreen">#0001CC88</color>
+    <color name="c_chartGradientStartColorRed">#40FE5430</color>
+    <color name="c_chartGradientEndColorRed">#00FE5430</color>
+</resources>

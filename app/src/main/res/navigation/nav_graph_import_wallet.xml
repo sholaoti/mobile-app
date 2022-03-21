@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_import_wallet"
+    app:startDestination="@id/addWalletFragment">
+
+    <fragment
+        android:id="@+id/addWalletFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.addwallet.AddWalletFragment">
+
+        <action
+            android:id="@+id/toImportWalletFragment"
+            app:destination="@id/importWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/toCreateMultiWalletFragment"
+            app:destination="@id/createMultiWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/createMultiWalletFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.createmultiwallet.CreateMultiWalletFragment">
+
+        <action
+            android:id="@+id/toRecoveryPhraseActivity"
+            app:destination="@id/recoveryPhraseActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out">
+        </action>
+
+    </fragment>
+
+    <activity android:id="@+id/recoveryPhraseActivity"
+        android:name="network.etna.etnawallet.ui.recoveryphrase.RecoveryPhraseActivity">
+        <argument
+            android:name="walletId"
+            app:argType="string" />
+
+        <argument
+            android:name="checkOTP"
+            app:argType="boolean" />
+    </activity>
+
+    <fragment
+        android:id="@+id/importWalletFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importwallet.ImportWalletFragment"
+        android:label="Import Wallet">
+
+        <action
+            android:id="@+id/importWalletFragment_to_importMultiWalletFragment"
+            app:destination="@id/importMultiWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+        <action
+            android:id="@+id/importWalletFragment_to_importSingleWalletFragment"
+            app:destination="@id/importSingleWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/fade_out"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/importMultiWalletFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importmultiwallet.ImportMultiWalletFragment" />
+
+    <fragment
+        android:id="@+id/importSingleWalletFragment"
+        android:name="network.etna.etnawallet.ui.addwallet.importsinglewallet.ImportSingleWalletFragment" />
+</navigation>

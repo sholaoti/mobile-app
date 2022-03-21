@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1050041314618",
+    "project_id": "etnawallet",
+    "storage_bucket": "etnawallet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050041314618:android:b827f7d9acc1dff4673403",
+        "android_client_info": {
+          "package_name": "network.etna.etnawallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050041314618-jtf0di9r0k0sr35lmir5mofmmnt0747n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLPnhUFrDzy8QmQL6t5PRmtKnsm7_2dWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050041314618-jtf0di9r0k0sr35lmir5mofmmnt0747n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

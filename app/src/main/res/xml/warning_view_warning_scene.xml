@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@+id/warningLayoutHidden"
+        motion:constraintSetEnd="@+id/warningLayoutVisible"
+        motion:motionInterpolator="easeInOut"
+        motion:duration="300">
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/warningLayoutHidden">
+        <Constraint
+            android:id="@id/warningLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="-65dp"
+            android:visibility="invisible"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/warningLayoutVisible">
+        <Constraint
+            android:id="@id/warningLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="0dp"
+            android:visibility="visible"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>

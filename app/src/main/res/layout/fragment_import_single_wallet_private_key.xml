@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_backgroundColor">
+
+    <TextView
+        android:id="@+id/walletNameDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/wallet_name" />
+
+    <EditText
+        android:id="@+id/walletNameTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/enter_name"
+        android:singleLine="true"
+        android:textColorHint="@color/c_primaryColor600"
+        android:textColor="@color/c_primaryColor100"
+        android:lines="1"
+        style="@style/TextAppearance.Etna.HeadlineSmall"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletNameDesc" />
+
+    <TextView
+        android:id="@+id/walletPrivateKeyDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walletNameTextField"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/private_key" />
+
+    <EditText
+        android:id="@+id/walletPrivateKeyTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/type_here"
+        android:singleLine="true"
+        android:textColorHint="@color/c_primaryColor600"
+        android:textColor="@color/c_primaryColor100"
+        android:lines="1"
+        style="@style/TextAppearance.Etna.HeadlineSmall"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletPrivateKeyDesc"
+        android:imeOptions="actionDone" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/walletPrivateKeyTextField"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/import_private_key_notice" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/importButton"
+        android:text="@string/str_import"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/bottom_space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    android:id="@+id/main_container"
+    android:clipChildren="false"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/searchBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/failedBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_background"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/c_secondaryColorRed" />
+
+    <ImageView
+        android:id="@+id/foundBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_background"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/c_secondaryColorYellow" />
+
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search_big"
+        app:layout_constraintEnd_toEndOf="@id/searchBackground"
+        app:layout_constraintStart_toStartOf="@id/searchBackground"
+        app:layout_constraintTop_toTopOf="@id/searchBackground"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackground"
+        />
+
+    <ImageView
+        android:id="@+id/failedIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:src="@drawable/ic_error_big"
+        app:layout_constraintEnd_toEndOf="@id/searchBackground"
+        app:layout_constraintStart_toStartOf="@id/searchBackground"
+        app:layout_constraintTop_toTopOf="@id/searchBackground"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackground"
+        />
+
+    <ImageView
+        android:id="@+id/foundIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/searchBackground"
+        app:layout_constraintStart_toStartOf="@id/searchBackground"
+        app:layout_constraintTop_toTopOf="@id/searchBackground"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackground"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

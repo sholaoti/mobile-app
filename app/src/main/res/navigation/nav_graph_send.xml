@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/sendFormFragment">
+
+    <fragment
+        android:id="@+id/sendFormFragment"
+        android:name="network.etna.etnawallet.ui.asset.send.sendform.SendFormFragment">
+
+        <action android:id="@+id/toQRScannerDialogFragment"
+            app:destination="@+id/qrScannerDialogFragment">
+        </action>
+
+        <action android:id="@+id/toSendResultSuccessDialogFragment"
+            app:destination="@+id/sendResultSuccessDialogFragment">
+        </action>
+
+        <action android:id="@+id/toSendResultFailedDialogFragment"
+            app:destination="@+id/sendResultFailedDialogFragment">
+        </action>
+
+        <action
+            android:id="@+id/toSelectTokenFragment"
+            app:destination="@id/selectTokenFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_bottom"
+            />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/qrScannerDialogFragment"
+        android:name="network.etna.etnawallet.ui.asset.send.qrscanner.QRScannerDialogFragment">
+    </dialog>
+
+    <fragment
+        android:id="@+id/selectTokenFragment"
+        android:name="network.etna.etnawallet.ui.asset.send.selecttoken.SelectTokenFragment">
+    </fragment>
+
+    <dialog
+        android:id="@+id/sendResultSuccessDialogFragment"
+        android:name="network.etna.etnawallet.ui.asset.send.senddialog.SendResultSuccessDialogFragment">
+    </dialog>
+
+    <dialog
+        android:id="@+id/sendResultFailedDialogFragment"
+        android:name="network.etna.etnawallet.ui.asset.send.senddialog.SendResultFailedDialogFragment">
+    </dialog>
+
+</navigation>

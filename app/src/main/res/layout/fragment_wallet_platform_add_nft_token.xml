@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_backgroundColor">
+
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/layout_basic_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/platformImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="@dimen/margin_from_topbar"
+        android:layout_marginStart="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/includeToolbar"/>
+
+    <TextView
+        android:id="@+id/platformName"
+        style="@style/TextAppearance.Etna.HeadlineSmallBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/c_primaryColor100"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toEndOf="@+id/platformImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/platformImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/platformImageView" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/c_primaryColor700"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        app:layout_constraintTop_toBottomOf="@id/platformImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nftIdDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/wallet_platform_add_nft_token_nftid_desc" />
+
+    <EditText
+        android:id="@+id/nftIdTextField"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/wallet_platform_add_nft_token_nftid_hint"
+        android:singleLine="true"
+        android:textColorHint="@color/c_primaryColor600"
+        android:textColor="@color/c_primaryColor100"
+        android:lines="1"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nftIdDesc" />
+
+    <TextView
+        android:id="@+id/nftAddressDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nftIdTextField"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/wallet_platform_add_nft_token_nftaddress_desc" />
+
+    <EditText
+        android:id="@+id/nftAddressTextField"
+        style="@style/TextAppearance.Etna.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_edit_text"
+        android:hint="@string/wallet_platform_add_nft_token_nftaddress_hint"
+        android:singleLine="true"
+        android:textColorHint="@color/c_primaryColor600"
+        android:textColor="@color/c_primaryColor100"
+        android:lines="1"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nftAddressDesc" />
+
+    <TextView
+        android:id="@+id/nftTokenDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_primaryColor400"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nftAddressTextField"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="@dimen/base_margin"
+        style="@style/TextAppearance.Etna.Caption"
+        android:text="@string/wallet_platform_add_nft_token_desc" />
+
+    <network.etna.etnawallet.ui.base.buttons.MainButton
+        android:id="@+id/addButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/bottom_space"
+        android:text="@string/wallet_platform_add_nft_token_button"
+        app:buttonColor="green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
